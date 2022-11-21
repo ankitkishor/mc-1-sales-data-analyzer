@@ -50,6 +50,7 @@ public class SalesDataAnalyzerTest {
     public void givenSalesDetailsGetTopCustomerWhoSpentMaxTimeOnSite(){
         List<SalesRecord> output = salesDataAnalyzer.readFile(fileName);
         SalesRecord salesRecord = salesDataAnalyzer.getTopCustomerWhoSpentMaxTimeOnSite(output,new TimeOnSiteComparator());
-        assertEquals(169.2,salesRecord.getTimeOnSite(),0);
+        assertEquals(169.2,salesRecord.getTime_on_site(),0);
+
     }
 }

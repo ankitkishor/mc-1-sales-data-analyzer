@@ -72,11 +72,13 @@ public class SalesRecord {
         this.amount = amount;
     }
 
-    public double getTimeOnSite() {
+    public double getTime_on_site() {
+
         return timeOnSite;
     }
 
-    public void setTimeOnSite(double timeOnSite) {
+    public void setTime_on_site(double timeOnSite) {
+
         this.timeOnSite = timeOnSite;
     }
 

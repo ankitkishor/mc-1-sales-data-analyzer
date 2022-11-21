@@ -24,7 +24,7 @@ public class SalesDataAnalyzer {
                salesRecord.setProductCategory(Integer.parseInt(value[2]));
                salesRecord.setPaymentMethod(value[3]);
                salesRecord.setAmount(Double.parseDouble(value[4]));
-               salesRecord.setTimeOnSite(Double.parseDouble(value[5]));
+               salesRecord.setTime_on_site(Double.parseDouble(value[5]));
                salesRecord.setClicksInSite(Integer.parseInt(value[6]));
                list.add(salesRecord);
 
