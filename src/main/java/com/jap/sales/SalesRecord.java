@@ -7,29 +7,20 @@ public class SalesRecord {
 
     private String date;
     private int customerId;
-
     private int productCategory;
-
     private String paymentMethod;
-
     private double amount;
     private double timeOnSite;
-
     private int clicksInSite;
 
-
-
-    public SalesRecord() {
-    }
-
-    public SalesRecord(String date, int customer_id, int product_category, String payment_method, double amount, double time_on_site, int clicks_in_site) {
+    public SalesRecord(String date, int customerId, int productCategory, String paymentMethod, double amount, double timeOnSite, int clicksInSite) {
         this.date = date;
-        this.customerId = customer_id;
-        this.productCategory = product_category;
-        this.paymentMethod = payment_method;
+        this.customerId = customerId;
+        this.productCategory = productCategory;
+        this.paymentMethod = paymentMethod;
         this.amount = amount;
-        this.timeOnSite = time_on_site;
-        this.clicksInSite = clicks_in_site;
+        this.timeOnSite = timeOnSite;
+        this.clicksInSite = clicksInSite;
     }
 
     public String getDate() {
@@ -72,13 +63,11 @@ public class SalesRecord {
         this.amount = amount;
     }
 
-    public double getTime_on_site() {
-
+    public double getTimeOnSite() {
         return timeOnSite;
     }
 
-    public void setTime_on_site(double timeOnSite) {
-
+    public void setTimeOnSite(double timeOnSite) {
         this.timeOnSite = timeOnSite;
     }
 
@@ -90,33 +79,32 @@ public class SalesRecord {
         this.clicksInSite = clicksInSite;
     }
 
-    // Override the toString method
-
-
-    @Override
-    public String toString() {
-        return "SalesRecord{" +
-                "date='" + date + '\'' +
-                ", customerId=" + customerId +
-                ", productCategory=" + productCategory +
-                ", paymentMethod='" + paymentMethod + '\'' +
-                ", amount=" + amount +
-                ", timeOnSite=" + timeOnSite +
-                ", clicksInSite=" + clicksInSite +
-                '}';
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof SalesRecord)) return false;
         SalesRecord that = (SalesRecord) o;
-        return customerId == that.customerId && productCategory == that.productCategory && Double.compare(that.getAmount(), getAmount()) == 0 && Double.compare(that.timeOnSite, timeOnSite) == 0 && clicksInSite == that.clicksInSite && Objects.equals(getDate(), that.getDate()) && Objects.equals(paymentMethod, that.paymentMethod);
+        return getCustomerId() == that.getCustomerId() && getProductCategory() == that.getProductCategory() && Double.compare(that.getAmount(), getAmount()) == 0 && Double.compare(that.getTimeOnSite(), getTimeOnSite()) == 0 && getClicksInSite() == that.getClicksInSite() && Objects.equals(getDate(), that.getDate()) && Objects.equals(getPaymentMethod(), that.getPaymentMethod());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getDate(), customerId, productCategory, paymentMethod, getAmount(), timeOnSite, clicksInSite);
+        return Objects.hash(getDate(), getCustomerId(), getProductCategory(), getPaymentMethod(), getAmount(), getTimeOnSite(), getClicksInSite());
     }
 
+    @Override
+    public String toString() {
+        return "SalesRecord{" +
+                "date='" + date + '\'' +
+                ", customer_id=" + customerId +
+                ", product_category=" + productCategory +
+                ", payment_method='" + paymentMethod + '\'' +
+                ", amount=" + amount +
+                ", time_on_site=" + timeOnSite +
+                ", clicks_in_site=" + clicksInSite +
+                '}';
+    }
+
+    public SalesRecord() {
+    }
 }

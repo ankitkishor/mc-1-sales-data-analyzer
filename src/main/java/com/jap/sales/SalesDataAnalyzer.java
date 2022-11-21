@@ -24,7 +24,7 @@ public class SalesDataAnalyzer {
                salesRecord.setProductCategory(Integer.parseInt(value[2]));
                salesRecord.setPaymentMethod(value[3]);
                salesRecord.setAmount(Double.parseDouble(value[4]));
-               salesRecord.setTime_on_site(Double.parseDouble(value[5]));
+               salesRecord.setTimeOnSite(Double.parseDouble(value[5]));
                salesRecord.setClicksInSite(Integer.parseInt(value[6]));
                list.add(salesRecord);
 
@@ -54,7 +54,6 @@ public class SalesDataAnalyzer {
         Collections.sort(salesData, new TimeOnSiteComparator());
         for (SalesRecord s2 : salesData) {
             salesRecord = s2;
-
 
         }
         return salesRecord;
