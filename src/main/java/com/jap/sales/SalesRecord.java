@@ -6,21 +6,21 @@ import java.util.Objects;
 public class SalesRecord {
 
     private String date;
-    private int customerId;
-    private int productCategory;
-    private String paymentMethod;
+    private int customer_id;
+    private int product_category;
+    private String payment_method;
     private double amount;
-    private double timeOnSite;
-    private int clicksInSite;
+    private double time_on_site;
+    private int clicks_in_site;
 
-    public SalesRecord(String date, int customerId, int productCategory, String paymentMethod, double amount, double timeOnSite, int clicksInSite) {
+    public SalesRecord(String date, int customer_id, int product_category, String payment_method, double amount, double time_on_site, int clicks_in_site) {
         this.date = date;
-        this.customerId = customerId;
-        this.productCategory = productCategory;
-        this.paymentMethod = paymentMethod;
+        this.customer_id = customer_id;
+        this.product_category = product_category;
+        this.payment_method = payment_method;
         this.amount = amount;
-        this.timeOnSite = timeOnSite;
-        this.clicksInSite = clicksInSite;
+        this.time_on_site = time_on_site;
+        this.clicks_in_site = clicks_in_site;
     }
 
     public String getDate() {
@@ -31,28 +31,28 @@ public class SalesRecord {
         this.date = date;
     }
 
-    public int getCustomerId() {
-        return customerId;
+    public int getCustomer_id() {
+        return customer_id;
     }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
+    public void setCustomer_id(int customer_id) {
+        this.customer_id = customer_id;
     }
 
-    public int getProductCategory() {
-        return productCategory;
+    public int getProduct_category() {
+        return product_category;
     }
 
-    public void setProductCategory(int productCategory) {
-        this.productCategory = productCategory;
+    public void setProduct_category(int product_category) {
+        this.product_category = product_category;
     }
 
-    public String getPaymentMethod() {
-        return paymentMethod;
+    public String getPayment_method() {
+        return payment_method;
     }
 
-    public void setPaymentMethod(String paymentMethod) {
-        this.paymentMethod = paymentMethod;
+    public void setPayment_method(String payment_method) {
+        this.payment_method = payment_method;
     }
 
     public double getAmount() {
@@ -63,20 +63,36 @@ public class SalesRecord {
         this.amount = amount;
     }
 
-    public double getTimeOnSite() {
-        return timeOnSite;
+    public double getTime_on_site() {
+        return time_on_site;
     }
 
-    public void setTimeOnSite(double timeOnSite) {
-        this.timeOnSite = timeOnSite;
+    public void setTime_on_site(double time_on_site) {
+        this.time_on_site = time_on_site;
     }
 
-    public int getClicksInSite() {
-        return clicksInSite;
+    public int getClicks_in_site() {
+        return clicks_in_site;
     }
 
-    public void setClicksInSite(int clicksInSite) {
-        this.clicksInSite = clicksInSite;
+    public void setClicks_in_site(int clicks_in_site) {
+        this.clicks_in_site = clicks_in_site;
+    }
+
+    public SalesRecord() {
+    }
+
+    @Override
+    public String toString() {
+        return "SalesRecord{" +
+                "date='" + date + '\'' +
+                ", customer_id=" + customer_id +
+                ", product_category=" + product_category +
+                ", payment_method='" + payment_method + '\'' +
+                ", amount=" + amount +
+                ", time_on_site=" + time_on_site +
+                ", clicks_in_site=" + clicks_in_site +
+                '}';
     }
 
     @Override
@@ -84,27 +100,11 @@ public class SalesRecord {
         if (this == o) return true;
         if (!(o instanceof SalesRecord)) return false;
         SalesRecord that = (SalesRecord) o;
-        return getCustomerId() == that.getCustomerId() && getProductCategory() == that.getProductCategory() && Double.compare(that.getAmount(), getAmount()) == 0 && Double.compare(that.getTimeOnSite(), getTimeOnSite()) == 0 && getClicksInSite() == that.getClicksInSite() && Objects.equals(getDate(), that.getDate()) && Objects.equals(getPaymentMethod(), that.getPaymentMethod());
+        return getCustomer_id() == that.getCustomer_id() && getProduct_category() == that.getProduct_category() && Double.compare(that.getAmount(), getAmount()) == 0 && Double.compare(that.getTime_on_site(), getTime_on_site()) == 0 && getClicks_in_site() == that.getClicks_in_site() && Objects.equals(getDate(), that.getDate()) && Objects.equals(getPayment_method(), that.getPayment_method());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getDate(), getCustomerId(), getProductCategory(), getPaymentMethod(), getAmount(), getTimeOnSite(), getClicksInSite());
-    }
-
-    @Override
-    public String toString() {
-        return "SalesRecord{" +
-                "date='" + date + '\'' +
-                ", customer_id=" + customerId +
-                ", product_category=" + productCategory +
-                ", payment_method='" + paymentMethod + '\'' +
-                ", amount=" + amount +
-                ", time_on_site=" + timeOnSite +
-                ", clicks_in_site=" + clicksInSite +
-                '}';
-    }
-
-    public SalesRecord() {
+        return Objects.hash(getDate(), getCustomer_id(), getProduct_category(), getPayment_method(), getAmount(), getTime_on_site(), getClicks_in_site());
     }
 }

@@ -3,8 +3,6 @@ package com.jap.sales;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -20,12 +18,12 @@ public class SalesDataAnalyzer {
                String[] value=line.split(",");
                SalesRecord salesRecord=new SalesRecord();
                salesRecord.setDate(value[0]);
-               salesRecord.setCustomerId(Integer.parseInt(value[1]));
-               salesRecord.setProductCategory(Integer.parseInt(value[2]));
-               salesRecord.setPaymentMethod(value[3]);
+               salesRecord.setCustomer_id(Integer.parseInt(value[1]));
+               salesRecord.setProduct_category(Integer.parseInt(value[2]));
+               salesRecord.setPayment_method(value[3]);
                salesRecord.setAmount(Double.parseDouble(value[4]));
-               salesRecord.setTimeOnSite(Double.parseDouble(value[5]));
-               salesRecord.setClicksInSite(Integer.parseInt(value[6]));
+               salesRecord.setTime_on_site(Double.parseDouble(value[5]));
+               salesRecord.setClicks_in_site(Integer.parseInt(value[6]));
                list.add(salesRecord);
 
            }
